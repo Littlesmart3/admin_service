@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-27 14:43:33
  * @LastEditors: lee
- * @LastEditTime: 2021-10-27 15:37:41
+ * @LastEditTime: 2021-10-28 14:45:01
  * @FilePath: /app/controller/home.js
  */
 'use strict';
@@ -17,7 +17,7 @@ class HomeController extends Controller {
 
   async hahaha() {
     const { ctx } = this;
-    ctx.body = '<h1>我的天呀！😯</h1>';
+    ctx.body = 'hi, egg';
   }
 }
 
