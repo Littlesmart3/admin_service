@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-28 09:53:55
  * @LastEditors: lee
- * @LastEditTime: 2021-10-28 19:16:23
+ * @LastEditTime: 2021-10-28 19:30:37
  * @FilePath: /app/controller/lee.js
  */
 'use strict';
@@ -42,8 +42,17 @@ class leeController extends Controller {
     // ctx.body = '大哥你好，我是' + name + ',今年' + age + '岁.欢迎光临红浪漫!';
     ctx.body = ctx;
   }
-
-
+  // async add() {
+  //   const ctx = this.ctx;
+  //   ctx.body = 'add';
+  // }
+  async add() {
+    const { ctx } = this;
+    ctx.body = {
+      status: 200,
+      data: ctx.request.body,
+    };
+  }
 }
 
 
