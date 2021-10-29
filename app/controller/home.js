@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-27 14:43:33
  * @LastEditors: lee
- * @LastEditTime: 2021-10-29 10:45:30
+ * @LastEditTime: 2021-10-29 14:29:13
  * @FilePath: /app/controller/home.js
  */
 'use strict';
@@ -11,8 +11,14 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = 'Hello World';
+    // const { ctx } = this;
+    // ctx.body = 'Hello World';
+
+    const { ctx, app } = this;
+    console.log(app.mysql);
+    const res = await app.mysql.select('article');
+    console.log(res);
+    ctx.body = res;
   }
 
   async hahaha() {

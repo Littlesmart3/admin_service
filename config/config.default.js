@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-27 14:43:33
  * @LastEditors: lee
- * @LastEditTime: 2021-10-28 19:25:08
+ * @LastEditTime: 2021-10-29 14:28:27
  * @FilePath: /config/config.default.js
  */
 /* eslint valid-jsdoc: "off" */
@@ -25,6 +25,25 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.mysql = {
+    // 单数据库信息配置
+    client: {
+      // host
+      host: 'localhost',
+      // 端口号
+      port: '3306',
+      // 用户名
+      user: 'root',
+      // 密码
+      password: '123456',
+      // 数据库名
+      database: 'egg_article',
+    },
+    // 是否加载到 app 上，默认开启
+    app: true,
+    // 是否加载到 agent 上，默认关闭
+    agent: false,
+  };
 
   config.security = {
     csrf: {
