@@ -1,3 +1,10 @@
+<!--
+ * @Author: lee
+ * @Date: 2021-10-27 14:43:33
+ * @LastEditors: lee
+ * @LastEditTime: 2021-10-29 10:40:35
+ * @FilePath: /README.md
+-->
 # egg
 
 
@@ -31,3 +38,9 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+
+Service 封装的一个抽象层，数据库交互的代码
+- 保持Controller 逻辑更加简单
+- 独立性，Service 多个Controller
+- 写测试用例简单

@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-28 09:53:55
  * @LastEditors: lee
- * @LastEditTime: 2021-10-28 19:30:37
+ * @LastEditTime: 2021-10-29 10:42:12
  * @FilePath: /app/controller/lee.js
  */
 'use strict';
@@ -27,7 +27,8 @@ class leeController extends Controller {
   // 自由传参模式
   async getGirl() {
     const { ctx } = this;
-    ctx.body = ctx.query;
+    const res = await ctx.service.lee.getGirl('1818');
+    ctx.body = res;
 
   }
   // async getGirl2() {

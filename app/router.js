@@ -2,7 +2,7 @@
  * @Author: lee
  * @Date: 2021-10-27 14:43:33
  * @LastEditors: lee
- * @LastEditTime: 2021-10-28 19:28:57
+ * @LastEditTime: 2021-10-29 10:48:28
  * @FilePath: /app/router.js
  */
 'use strict';
@@ -20,4 +20,5 @@ module.exports = app => {
   // router.get('/getGirl2/:name', controller.lee.getGirl2);
   router.get('/getGirl2/:name/:age', controller.lee.getGirl2);
   router.post('/add', controller.lee.add);
+  router.get('/testGetGirl', controller.home.testGrtGirl);
 };
