@@ -37,7 +37,7 @@ class leeController extends Controller {
   // }
   async getGirl2() {
     const { ctx } = this;
-    console.error(ctx);
+    // console.error(ctx);
     // const name = ctx.params.name;
     // const age = ctx.params.age;
     // ctx.body = '大哥你好，我是' + name + ',今年' + age + '岁.欢迎光临红浪漫!';

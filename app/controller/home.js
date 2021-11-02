@@ -16,7 +16,7 @@ class HomeController extends Controller {
 
     const { ctx, app } = this;
     console.log(app.mysql);
-    const res = await app.mysql.select('article');
+    const res = await app.mysql.select('employees');
     console.log(res);
     ctx.body = res;
   }
