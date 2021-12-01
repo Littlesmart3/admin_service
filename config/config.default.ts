@@ -15,6 +15,44 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  // add your mysql config in here
+  config.mysql = {
+    // 单数据库信息配置
+    client: {
+      // host
+      host: '114.55.101.4',
+      // 端口号
+      port: '3306',
+      // 用户名
+      user: 'root',
+      // 密码
+      password: '123456',
+      // 数据库名
+      database: 'admin_dev',
+    },
+    // 是否加载到 app 上，默认开启
+    app: true,
+    // 是否加载到 agent 上，默认关闭
+    agent: false,
+  };
+
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+  };
+
+  config.cors = {
+    credentials: true,
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  };
+  config.validate = {
+    convert: false,
+    validateRoot: false,
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
