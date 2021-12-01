@@ -52,13 +52,6 @@ export default (appInfo: EggAppInfo) => {
     convert: false,
     validateRoot: false,
   };
-  config.cluster = {
-    listen: {
-      path: '',
-      port: 7878,
-      hostname: '0.0.0.0',
-    },
-  };
 
   // the return config will combines to EggAppConfig
   return {
