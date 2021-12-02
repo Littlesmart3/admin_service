@@ -1,8 +1,5 @@
 import { Controller } from 'egg';
-// interface LoginType {
-//   account: string;
-//   password: string;
-// }
+import crypto = require('crypto');
 
 export default class LoginController extends Controller {
   public async getLogin() {
@@ -24,8 +21,22 @@ export default class LoginController extends Controller {
 
     ctx.body = ctx;
   }
-  public async getWxQrcode() {
-    const { ctx } = this;
-    ctx.body = 123;
+  public async getWechatQrcode() {
+    const query = this.ctx.request.query;
+    const signature = query.signature;
+    const timestamp = query.timestamp;
+    const nonce = query.nonce;
+    const echostr = query.echostr;
+    if (await this.check(timestamp, nonce, signature, 'wechat_token')) {
+      this.ctx.body = echostr;
+    } else {
+      this.ctx.body = 'It is not from weixin';
+    }
+  }
+  async check(timestamp, nonce, signature, token) {
+    // eslint-disable-next-line array-bracket-spacing
+    const tmp = [token, timestamp, nonce].sort().join('');
+    const currSign = crypto.createHash('sha1').update(tmp).digest('hex');
+    return currSign === signature;
   }
 }

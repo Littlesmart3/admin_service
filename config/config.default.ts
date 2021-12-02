@@ -39,8 +39,14 @@ export default (appInfo: EggAppInfo) => {
   config.security = {
     csrf: {
       enable: false,
+      ignore: '/wechat',
       ignoreJSON: true,
     },
+  };
+  config.wechat = {
+    token: 'wechat_token',
+    appid: 'wx309b101eb929b068',
+    encodingAESKey: 'IDstLjjtt0Kq59EdEbYlUyFp0NwU1jn7kP225RNqCtR',
   };
 
   config.cors = {
