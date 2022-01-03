@@ -6,5 +6,4 @@ export default (app: Application) => {
   router.get('/', controller.home.index);
   router.get('/login', controller.login.login.getLogin);
   router.post('/login', controller.login.login.postLogin);
-  router.get('/login/wechat', controller.login.login.getWechatQrcode);
 };
